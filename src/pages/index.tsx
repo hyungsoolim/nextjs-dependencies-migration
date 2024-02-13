@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ReactNode } from "react";
-import { UP } from "@store/counterSlice";
+import { UP, asyncUpFetch } from "@store/counterSlice";
 
 
 // const reducer = (state, action) => {
@@ -18,16 +18,24 @@ const Index = () => {
 
   const dispatch = useDispatch();
   const count = useSelector((state: any) => state.counter.value);
+  const status = useSelector((state: any) => state.counter.status);
 
   return (
     <div>
       <button onClick={() => {
         // dispatch({type: "counterSlice/UP", step: 2})
         dispatch(UP(2));
-      }}>+</button>
+      }}>+
+      </button>
       {count as ReactNode}
+      <button onClick={() => {
+        dispatch(asyncUpFetch());
+      }}>+ async fetch
+      </button>
+      <br />
+      <div>{count} | {status}</div>
     </div>
-  )
-}
+  );
+};
 
 export default Index;
