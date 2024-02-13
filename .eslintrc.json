@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ]
+    // "newline-per-chained-call": [
+    //   "warn",
+    //   {
+    //     "ignoreChainWithDepth": 1
+    //   }
+    // ],
+    // "indent": ["off", 2, { "MemberExpression": 1 }]
+  }
 }
