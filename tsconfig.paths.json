@@ -11,7 +11,7 @@
       // "@interfaces/*": ["src/interfaces/*"],
       "@apis/*": ["src/apis/*"],
       "@utils/*": ["src/utils/*"],
-      "@modules/*": ["src/modules/*"],
+      "@store/*": ["src/store/*"],
       "@constants/*": ["src/constants/*"],
       "@dev/*": ["src/dev/*"]
       // "@/*": ["src/*"]
